@@ -10,7 +10,7 @@
     <p class="input_title">Password</p>
     <input #pass type="password" id="inputPassword" class="login_box" placeholder="******" required>
     <div id="remember" class="checkbox">
-      <a [routerLink]="['forget']">Forget Password</a>
+      <a [routerLink]="['forget']" [queryParams]="{from : 'India'}">Forget Password</a>
       <!-- <a href="my.html">Forget Password</a> -->
     </div>
 

@@ -16,6 +16,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(em: string, pass: string) {
-    this.router.navigate(['dash', em]);
+    this.router.navigate(['dash', em], {
+      queryParams: {
+        page: 1,
+        limit: 10
+      }
+    });
   }
 }

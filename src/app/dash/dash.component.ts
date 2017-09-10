@@ -1,3 +1,4 @@
+import { Router } from '@angular/router/';
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
@@ -11,9 +12,11 @@ import { ActivatedRoute } from '@angular/router';
 export class DashComponent implements OnInit {
 
   usNm: string;
+  page = 0;
   constructor(
     private config: NgbCarouselConfig,
-    private actRt: ActivatedRoute
+    private actRt: ActivatedRoute,
+    private router: Router
   ) {
     config.interval = 10000;
     config.wrap = false;
@@ -22,7 +25,8 @@ export class DashComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usNm = this.actRt.snapshot.params['usNm'];
+    //this.usNm = this.actRt.snapshot.params['usNm'];
     this.actRt.params.subscribe(rtPrms => this.usNm = rtPrms['usNm']);
+    this.router.routerState.root.queryParams.subscribe(quPrm => this.page = quPrm['page']);
   }
 }

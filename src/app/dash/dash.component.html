@@ -27,7 +27,15 @@
     <h4 class="card-title">{{usNm | uppercase }}</h4>
     <h6 class="card-subtitle mb-2 text-muted">so far 205 candidates enrolled for angular 2</h6>
     <p class="card-text">This is codekuls angular weekend batch. </p>
-    <input type="text" [(ngModel)]="tmpUsNm"/>
+    <input type="text" [(ngModel)]="tmpUsNm" />
     <a [routerLink]="['/dash', tmpUsNm]" class="card-link">Same Page</a>
   </div>
+</div>
+
+<div>Default pagination</div>
+<ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+<pre>Current page: {{page}}</pre>
+
+<div>
+  <router-outlet></router-outlet>
 </div>

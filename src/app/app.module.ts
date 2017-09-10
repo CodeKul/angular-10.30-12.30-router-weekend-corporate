@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ForgetPassComponent } from './forget-pass/forget-pass.component';
 import { FormsModule } from '@angular/forms';
 import { BaseComponent } from './base/base.component';
+import { ProfileComponent } from './dash/profile.component';
+import { LogsComponent } from './dash/logs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { BaseComponent } from './base/base.component';
     DashComponent,
     NavbarComponent,
     ForgetPassComponent,
-    BaseComponent
+    BaseComponent,
+    ProfileComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,

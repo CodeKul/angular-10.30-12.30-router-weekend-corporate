@@ -1,0 +1,21 @@
+<h1 class="welcome text-center">Welcome to <br> Ice Code</h1>
+<div class="card card-container">
+  <h2 class='login_title text-center'>Login</h2>
+  <hr>
+
+  <form class="form-signin">
+    <span id="reauth-email" class="reauth-email"></span>
+    <p class="input_title">Email</p>
+    <input #em type="text" id="inputEmail" class="login_box" placeholder="user01@IceCode.com" required autofocus>
+    <p class="input_title">Password</p>
+    <input #pass type="password" id="inputPassword" class="login_box" placeholder="******" required>
+    <div id="remember" class="checkbox">
+      <a [routerLink]="['forget']">Forget Password</a>
+      <!-- <a href="my.html">Forget Password</a> -->
+    </div>
+
+    <button class="btn btn-lg btn-primary" type="button" (click)="onLogin(em.value, pass.value)">Login</button>
+  </form>
+  <!-- /form -->
+</div>
+<!-- /card-container -->

@@ -1,3 +1,4 @@
+import { DashGuardService } from './dash/dash-guard.service';
 import { LogsComponent } from './dash/logs.component';
 import { ProfileComponent } from './dash/profile.component';
 import { ForgetPassComponent } from './forget-pass/forget-pass.component';
@@ -11,8 +12,14 @@ const dashRoutes: Routes = [
 ];
 const routes: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'dash/:usNm', component: DashComponent, children: dashRoutes },
-    { path: 'forget', component: ForgetPassComponent }
+    {
+        path: 'dash/:usNm',
+        component: DashComponent,
+        children: dashRoutes,
+        canActivate: [DashGuardService]
+    },
+    { path: 'forget', component: ForgetPassComponent },
+    { path: '**', redirectTo: '' }
 ];
 
 export let MyRouterModule = RouterModule.forRoot(routes);

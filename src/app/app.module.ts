@@ -1,3 +1,4 @@
+import { DashGuardService } from './dash/dash-guard.service';
 import { AnyWebService } from './base/any-web.service';
 import { MyRouterModule } from './app.router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,7 +32,7 @@ import { LogsComponent } from './dash/logs.component';
     NgbModule.forRoot(),
     FormsModule
   ],
-  providers: [AnyWebService],
+  providers: [AnyWebService, DashGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
